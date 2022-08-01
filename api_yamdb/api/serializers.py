@@ -8,7 +8,6 @@ from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import serializers
 
 from ..reviews.models import Category, Comment, Genre, Review, Title, User
-
 from .utils import get_tokens_for_user
 
 

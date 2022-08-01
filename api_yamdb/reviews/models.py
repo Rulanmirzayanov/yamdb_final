@@ -114,7 +114,7 @@ class Title(models.Model):
         return self.name
 
 
-class Genre_title(models.Model):
+class GenreTitle(models.Model):
     """Связующая модель."""
 
     title = models.ForeignKey(
