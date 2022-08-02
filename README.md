@@ -54,5 +54,6 @@ docker-compose exec web python manage.py migrate
 docker-compose exec web python manage.py createsuperuser
 docker-compose exec web python manage.py collectstatic --no-input
 ```
+Проект развернут по адресу - http://51.250.107.75/redoc/
 
 ![example workflow](https://github.com/Rulanmirzayanov/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
