@@ -1,9 +1,9 @@
 import os
 from datetime import timedelta
 
-from dotenv import load_dotenv
-
-load_dotenv()
+# from dotenv import load_dotenv
+#
+# load_dotenv()
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -78,11 +78,11 @@ WSGI_APPLICATION = 'api_yamdb.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': os.getenv(key='DB_ENGINE', default='django.db.backends.postgresql'),
-        'NAME': os.getenv(key='DB_NAME', default='postgres'),
-        'USER': os.getenv(key='POSTGRES_USER', default='postgres'),
-        'PASSWORD': os.getenv(key='POSTGRES_PASSWORD', default='password'),
-        'HOST': os.getenv(key='DB_HOST', default='db'),
-        'PORT': os.getenv(key='DB_PORT', default='5432')
+        'NAME': os.getenv(key='DB_NAME', default='django.db.backends.postgres'),
+        'USER': os.getenv(key='POSTGRES_USER', default='django.db.backends.postgres'),
+        'PASSWORD': os.getenv(key='POSTGRES_PASSWORD', default='django.db.backends.password'),
+        'HOST': os.getenv(key='DB_HOST', default='django.db.backends.db'),
+        'PORT': os.getenv(key='DB_PORT', default='django.db.backends.5432')
     }
 }
 

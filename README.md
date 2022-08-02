@@ -46,11 +46,6 @@ python -m pip install --upgrade pip
 ```
 pip install -r requirements.txt
 ```
-# Описание команд для запуска приложения в контейнерах
-Пересобираем контейнеры и запустите их:
-```
-docker-compose up -d --build
-```
 
 # Описание команды для заполнения базы данными
 Выполните по очереди команды:
@@ -59,14 +54,5 @@ docker-compose exec web python manage.py migrate
 docker-compose exec web python manage.py createsuperuser
 docker-compose exec web python manage.py collectstatic --no-input
 ```
-Создайте дамп (резервную копию) базы:
-```
-docker-compose exec web python manage.py dumpdata > fixtures.json
-```
-Чтобы собранные контейнеры не мешали вам, остановите их командой:
-```
-docker-compose down -v
-```
-
 
 ![example workflow](https://github.com/Rulanmirzayanov/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
