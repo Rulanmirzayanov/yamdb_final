@@ -24,29 +24,22 @@ DB_HOST=db
 DB_PORT=5432 
 # порт для подключения к БД
 ```
+# Описание Workflow
+Workflow состоит из четырёх шагов:
+1. Проверка кода на соответствие стандарту PEP8 (с помощью пакета **flake8**) и запуск _pytest_ из репозитория yamdb_final;
+2. Сборка и доставка докер-образа для контейнера web на Docker Hub;
+3. Автоматический деплой проекта на боевой сервер;
+4. Отправка уведомления в Telegram о том, что процесс деплоя успешно завершился.
+
 # Установка проекта
 Клонировать репозиторий и перейти в него в командной строке:
 ```
 git clone https://github.com/Rulanmirzayanov/yamdb_final.git
 ```
+Переходим в директорию api_yamdb/infra/ и пересобираем контейнеры и запускаем их:
 ```
-cd api_yamdb
+docker-compose up -d --build
 ```
-Cоздать и активировать виртуальное окружение:
-```
-python -m venv venv
-```
-```
-source .\venv\Scripts\activate
-```
-Установить зависимости из файла requirements.txt:
-```
-python -m pip install --upgrade pip
-```
-```
-pip install -r requirements.txt
-```
-
 # Описание команды для заполнения базы данными
 Выполните по очереди команды:
 ```
@@ -54,6 +47,6 @@ docker-compose exec web python manage.py migrate
 docker-compose exec web python manage.py createsuperuser
 docker-compose exec web python manage.py collectstatic --no-input
 ```
-Проект развернут по адресу - http://51.250.107.75/redoc/
+Проект развернут по адресу - http://51.250.104.190/redoc/
 
 ![example workflow](https://github.com/Rulanmirzayanov/yamdb_final/actions/workflows/yamdb_workflow.yml/badge.svg)
